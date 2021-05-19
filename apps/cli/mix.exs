@@ -13,7 +13,7 @@ defmodule Cli.MixProject do
       start_permanent: Mix.env() == :prod,
       elixirc_paths: elixirc_paths(Mix.env()),
       deps: deps(),
-      elixirc_options: [warnings_as_errors: true]
+      elixirc_options: [warnings_as_errors: false]
     ]
   end
 

@@ -19,7 +19,7 @@ defmodule ExWire.Mixfile do
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      elixirc_options: [warnings_as_errors: true]
+      elixirc_options: [warnings_as_errors: false]
     ]
   end
 
@@ -36,7 +36,7 @@ defmodule ExWire.Mixfile do
       {:binary, "~> 0.0.5"},
       {:ex_doc, "~> 0.16", only: :dev, runtime: false},
       {:ex_rlp, "~> 0.5.2"},
-      {:snappyer, "~> 1.2"},
+      {:snappyer, "~> 1.2.8"},
       {:logger_file_backend, "~> 0.0.10"},
       # Umbrella deps
       {:blockchain, in_umbrella: true},
