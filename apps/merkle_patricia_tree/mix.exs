@@ -21,12 +21,12 @@ defmodule MerklePatriciaTree.Mixfile do
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      elixirc_options: [warnings_as_errors: true]
+      elixirc_options: [warnings_as_errors: false]
     ]
   end
 
   def application do
-    [extra_applications: [:logger, :logger_file_backend]]
+    [extra_applications: [:crypto, :logger, :logger_file_backend]]
   end
 
   defp deps do
@@ -34,7 +34,7 @@ defmodule MerklePatriciaTree.Mixfile do
       # External deps
       {:logger_file_backend, "~> 0.0.10"},
       {:ex_rlp, "~> 0.5.2"},
-      {:rocksdb, "~> 0.26.0"},
+      {:rocksdb, "~> 0.26.0", compile: "echo \"not compiling\"", app: false, override: true},
       {:jason, "~> 1.1"},
       # Umbrella deps
       {:exth_crypto, in_umbrella: true}
